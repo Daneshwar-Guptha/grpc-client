@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message Text {
+  string cmdLineText = 1;
+}
+message TextList{
+repeated Text texts=1;
+}
+message Empty{}
+
+service TextService {
+  rpc CreateCmdLineText (Text) returns (Text);
+  rpc GetCmdTextAll(Empty) returns (TextList);
+
+}
